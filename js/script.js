@@ -77,23 +77,23 @@ window.onload = function () {
   headerObserver.observe(headerElemet);
 
 
-  async function getProducts(button) {
-    if (!button.classList.contains('_hold')) {
-      button.classList.add('_hold');
-      const file = 'json/products.json';
-      let response = await fetch(file, {
-        method: 'GET',
-      });
-      if (response.ok) {
-        let result = await response.json();
-        loadProducts(result);
-        button.classList.remove('_hold');
-        button.remove();
-      } else {
-        alert('Ошибка');
-      }
-    }
-  }
+  // async function getProducts(button) {
+  //   if (!button.classList.contains('_hold')) {
+  //     button.classList.add('_hold');
+  //     const file = 'json/products.json';
+  //     let response = await fetch(file, {
+  //       method: 'GET',
+  //     });
+  //     if (response.ok) {
+  //       let result = await response.json();
+  //       loadProducts(result);
+  //       button.classList.remove('_hold');
+  //       button.remove();
+  //     } else {
+  //       alert('Ошибка');
+  //     }
+  //   }
+  // }
 
   function loadProducts(data) {
     const productsItems = document.querySelector('.products__items');
